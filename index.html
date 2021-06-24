@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>DNN: Dani News Network</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <header>
+            <img class="logo" src="https://fontmeme.com/permalink/210623/9868014a458d137490b7088e3d30378f.png" alt="logo"/>
+            <nav>
+                <ul class="nav__links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Subscribe</a></li>
+                    <li><a href="#">About Us</a></li>
+                </ul>
+            </nav>
+            <input type="text" placeholder="Article Name">
+            <button>search</button>
+            
+        </header>
+        <h1 class="main__title">Welcome to DNN</h1>
+
+        <!-- Slideshow container -->
+        <article class="feat-story-container">
+            <section class="feat_story">
+                <section class="story-num">1/4</section>
+                <img src="./images/img1.jpg" style="width:100%">
+                <section class="text">Story 1</section>
+            </section>
+
+            <section class="feat_story">
+                <section class="story-num">2/4</section>
+                <img src="./images/img2.jpg" style="width:100%">
+                <section class="text">Story 2</section>
+            </section>
+
+            <section class="feat_story">
+                <section class="story-num">3/4</section>
+                <img src="./images/img3.jpg" style="width:100%">
+                <section class="text">Story 3</section>
+            </section>
+
+            <section class="feat_story">
+                <section class="story-num">4/4</section>
+                <img src="./images/img4.jpg" style="width:100%">
+                <section class="text">Story 4</section>
+            </section>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            <!-- THe dots/circles -->
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+        </article>
+
+        <aside>
+            <h2>Top Stories</h2>
+            <ol>
+                <li>Story #1</li>
+                <li>Story #2</li>
+                <li>Story #3</li>
+                <li>Story #4</li>
+                <li>Story #5</li>
+
+            </ol>
+        </aside>
+
+        <footer>
+            <h2>Footer Section</h2>
+            <ul>
+                <li>Copyright Notice</li>
+                <li>Privacy Policy Link</li>
+                <li>Sitemap</li>
+                <li>Logo</li>
+                <li>Contact Information</li>
+                <li>Social Media Icons</li>
+                <li>Email Sign-up Form</li>
+            </ul>
+        </footer>
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("feat_story");
+              var dots = document.getElementsByClassName("dot");
+              if (n > slides.length) {slideIndex = 1}    
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                  slides[i].style.display = "none";  
+              }
+              for (i = 0; i < dots.length; i++) {
+                  dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";  
+              dots[slideIndex-1].className += " active";
+            }
+         </script>
+
+
+
+    </body>
+</html>
